@@ -25,7 +25,7 @@ class _A2State extends State<A2> {
     double height=MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
-        title: Text("Wallet", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),),
+        title: Text("Wallet123", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),),
         leading: Icon(Icons.arrow_back_ios_outlined),
       ),
       body: SingleChildScrollView(
