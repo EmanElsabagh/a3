@@ -12,6 +12,7 @@ class _A4State extends State<A4> with TickerProviderStateMixin{
   double? width ;
   double? height;
   TabController? tabController;
+  int currentIndex = 0;
   List<Widget> listView=[];
   List<Widget> tabListView=[];
   List<String> tabStringListView=[
@@ -24,9 +25,90 @@ class _A4State extends State<A4> with TickerProviderStateMixin{
     "Fries",
     "Drinks"
   ];
+
+  updateIndex(int index){
+    currentIndex = index;
+  }
+
   @override
   void initState() {
     tabController=TabController(length: 8, vsync: this);
+    for(int i=0; i<tabStringListView.length; i++){
+      tabListView.add(Tab(child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(tabStringListView[i],style: const TextStyle(color: Colors.grey),),
+          if( currentIndex == i)
+            const Icon(Icons.circle,size: 8,color: Colors.grey,)
+        ],
+      ),));
+    }
+    super.initState();
+  }
+
+
+
+  List<Widget> listViewMethod(){
+      for(int i=0; i<=8; i++){
+      listView.add(ListView.builder(
+        physics: const BouncingScrollPhysics(),
+        shrinkWrap: true,
+        itemCount: 6,
+        itemBuilder: (context,i){
+          return Card(
+            margin: const EdgeInsets.symmetric(horizontal: 8,vertical: 4),
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    children: [
+                      ClipRRect(
+                          borderRadius:const BorderRadius.all(Radius.circular(16)),
+                          child: Image.asset("assets/images/a4images/a${(i+1).toString()}.jpg",height: 80,width: 80,fit: BoxFit.cover,)),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text("Item Name${i+1}",style: const TextStyle(fontWeight: FontWeight.bold),),
+                            const SizedBox(height: 2.0,),
+                            SizedBox(
+                              width:200,
+                              child: Text("lunch, dinner, breakfast, lunch, dinner, breakfast, lunch, dinner, breakfast,${i+1}",
+                                overflow: TextOverflow.ellipsis,
+                                maxLines: 2,),
+                            ),
+                            Row(
+                              children: [
+                                Text("\$5.55${i+1}",style: const TextStyle(color: Colors.black,fontWeight: FontWeight.bold),),
+                                Text(" \$6.55${i+1}",style: const TextStyle(decoration: TextDecoration.lineThrough),),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                  const Column(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Icon(Icons.favorite_outline,color: Colors.grey,),
+                      Icon(Icons.add,color: Colors.black,),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+
+          );
+        },
+      ));
+    }
+      return listView;
+  }
+  List<Widget> tabListViewMethod(){
     for(int i=0; i<=8; i++){
       listView.add(ListView.builder(
         physics: const BouncingScrollPhysics(),
@@ -84,18 +166,9 @@ class _A4State extends State<A4> with TickerProviderStateMixin{
         },
       ));
     }
-    for(int i=0; i<=7; i++){
-      tabListView.add(Tab(child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(tabStringListView[i],style: const TextStyle(color: Colors.grey),),
-          if(i==tabController?.index)
-            const Icon(Icons.circle,size: 10,color: Colors.grey,)
-        ],
-      ),));
-    }
-    super.initState();
+    return listView;
   }
+
   @override
   Widget build(BuildContext context) {
    double width = MediaQuery.of(context).size.width;
@@ -176,9 +249,93 @@ class _A4State extends State<A4> with TickerProviderStateMixin{
                           color: Colors.white,
                         ),
                         controller: tabController,
+                        onTap: (index){
+                          setState(() {
+                            updateIndex(index);
+                          });
+                        },
                         isScrollable: true,
                         labelPadding: const EdgeInsets.symmetric(horizontal: 30.0),
-                        tabs:tabListView
+                        tabs:[
+                      Tab(child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(tabStringListView[0],style: const TextStyle(color: Colors.grey),),
+                          if( currentIndex == 0)
+                            const Icon(Icons.circle,size: 8,color: Colors.grey,)
+                        ],
+                      ),
+                      ),
+                          Tab(child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(tabStringListView[1],style: const TextStyle(color: Colors.grey),),
+                              if( currentIndex == 1)
+                                const Icon(Icons.circle,size: 8,color: Colors.grey,)
+                            ],
+                          ),
+                          ),
+                          Tab(child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(tabStringListView[2],style: const TextStyle(color: Colors.grey),),
+                              if( currentIndex == 2)
+                                const Icon(Icons.circle,size: 8,color: Colors.grey,)
+                            ],
+                          ),
+
+                          ),
+                          Tab(child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(tabStringListView[3],style: const TextStyle(color: Colors.grey),),
+                              if( currentIndex == 3)
+                                const Icon(Icons.circle,size: 8,color: Colors.grey,)
+                            ],
+                          ),
+
+                          ),
+                          Tab(child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(tabStringListView[4],style: const TextStyle(color: Colors.grey),),
+                              if( currentIndex == 4)
+                                const Icon(Icons.circle,size: 8,color: Colors.grey,)
+                            ],
+                          ),
+
+                          ),
+                          Tab(child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(tabStringListView[5],style: const TextStyle(color: Colors.grey),),
+                              if( currentIndex == 5)
+                                const Icon(Icons.circle,size: 8,color: Colors.grey,)
+                            ],
+                          ),
+
+                          ),
+                          Tab(child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(tabStringListView[6],style: const TextStyle(color: Colors.grey),),
+                              if( currentIndex == 6)
+                                const Icon(Icons.circle,size: 8,color: Colors.grey,)
+                            ],
+                          ),
+
+                          ),
+                          Tab(child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(tabStringListView[7],style: const TextStyle(color: Colors.grey),),
+                              if( currentIndex == 7)
+                                const Icon(Icons.circle,size: 8,color: Colors.grey,)
+                            ],
+                          ),
+
+                          ),
+                        ],
                       ),
                     ),
                   ),
@@ -186,7 +343,7 @@ class _A4State extends State<A4> with TickerProviderStateMixin{
                     height: height*0.50,
                     child:TabBarView(
                       controller: tabController,
-                      children: listView
+                      children: listViewMethod()
                     ) ,
                   ),
                 ],
