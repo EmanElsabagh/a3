@@ -115,7 +115,8 @@ class _A4State extends State<A4> with TickerProviderStateMixin{
                       ),
                     ),
                   ),
-                  Expanded(
+                 Container(
+                   height: height*0.50,
                       child:TabBarView(
                         controller: tabController,
                         children: [
@@ -125,8 +126,40 @@ class _A4State extends State<A4> with TickerProviderStateMixin{
                               itemCount: 10,
                               itemBuilder: (context,i){
                               return Card(
-                                margin: EdgeInsets.symmetric(horizontal: 30,vertical: 10),
-                                child: ListTile(
+                                margin: EdgeInsets.symmetric(horizontal: 15,vertical: 10),
+                                child: Container(
+                                  child: Column(
+                                    children: [
+                                      Row(
+                                        children: [
+                                          Container(
+                                              decoration: BoxDecoration(
+                                                borderRadius: BorderRadius.circular(100.0),
+                                                color: Colors.black,
+                                              ),
+                                              child: Image.asset("assets/images/a4images/a2.jpg",height: 80,width: 80,fit: BoxFit.cover,)),
+                                          Column(
+                                            children: [
+                                              Text("Item Name${i+1}",style: TextStyle(fontWeight: FontWeight.bold),),
+                                              SizedBox(height: 2.0,),
+                                              Text("lunch, dinner, breakfast,${i+1}"),
+                                              Row(
+                                                children: [
+                                                  Text("\$5.55${i+1}",style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),),
+                                                  Text(" \$6.55${i+1}",style: TextStyle(decoration: TextDecoration.lineThrough),),
+                                                  SizedBox(width: 100,),
+                                                  Icon(Icons.add,color: Colors.black,)
+                                                ],
+                                              ),
+                                            ],
+                                          ),
+                                          Icon(Icons.favorite_outline,color: Colors.grey,),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                /*Container(
                                   leading: Column(
                                     children: [
                                       Icon(Icons.favorite_outline,color: Colors.grey,),
@@ -145,8 +178,7 @@ class _A4State extends State<A4> with TickerProviderStateMixin{
                                       ),
                                     ],
                                   ),
-
-                                ),
+                                ),*/
                               );
                               },
                           ),
@@ -156,8 +188,40 @@ class _A4State extends State<A4> with TickerProviderStateMixin{
                             itemCount: 10,
                             itemBuilder: (context,i){
                               return Card(
-                                margin: EdgeInsets.symmetric(horizontal: 30,vertical: 10),
-                                child: ListTile(
+                                margin: EdgeInsets.symmetric(horizontal: 15,vertical: 10),
+                                child: Container(
+                                  child: Column(
+                                    children: [
+                                      Row(
+                                        children: [
+                                          Container(
+                                              decoration: BoxDecoration(
+                                                borderRadius: BorderRadius.circular(100.0),
+                                                color: Colors.black,
+                                              ),
+                                              child: Image.asset("assets/images/a4images/a3.jpg",height: 80,width: 80,fit: BoxFit.cover,)),
+                                          Column(
+                                            children: [
+                                              Text("Item Name${i+1}",style: TextStyle(fontWeight: FontWeight.bold),),
+                                              SizedBox(height: 2.0,),
+                                              Text("lunch, dinner, breakfast,${i+1}"),
+                                              Row(
+                                                children: [
+                                                  Text("\$5.55${i+1}",style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),),
+                                                  Text(" \$6.55${i+1}",style: TextStyle(decoration: TextDecoration.lineThrough),),
+                                                  SizedBox(width: 100,),
+                                                  Icon(Icons.add,color: Colors.black,)
+                                                ],
+                                              ),
+                                            ],
+                                          ),
+                                          Icon(Icons.favorite_outline,color: Colors.grey,),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                /*Container(
                                   leading: Column(
                                     children: [
                                       Icon(Icons.favorite_outline,color: Colors.grey,),
@@ -170,14 +234,13 @@ class _A4State extends State<A4> with TickerProviderStateMixin{
                                       Text("lunch, dinner, breakfast, everyday, order now yalla,${i+1}"),
                                       Row(
                                         children: [
-                                          Text("\$5.55${i+1}",style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),),
+                                          Text("\$5.55${i+1} ",style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),),
                                           Text("\$6.55${i+1}",style: TextStyle(decoration: TextDecoration.lineThrough),),
                                         ],
                                       ),
                                     ],
                                   ),
-
-                                ),
+                                ),*/
                               );
                             },
                           ),
@@ -187,8 +250,40 @@ class _A4State extends State<A4> with TickerProviderStateMixin{
                             itemCount: 10,
                             itemBuilder: (context,i){
                               return Card(
-                                margin: EdgeInsets.symmetric(horizontal: 30,vertical: 10),
-                                child: ListTile(
+                                margin: EdgeInsets.symmetric(horizontal: 15,vertical: 10),
+                                child: Container(
+                                  child: Column(
+                                    children: [
+                                      Row(
+                                        children: [
+                                          Container(
+                                              decoration: BoxDecoration(
+                                                borderRadius: BorderRadius.circular(100.0),
+                                                color: Colors.black,
+                                              ),
+                                              child: Image.asset("assets/images/a4images/a4.png",height: 80,width: 80,fit: BoxFit.cover,)),
+                                          Column(
+                                            children: [
+                                              Text("Item Name${i+1}",style: TextStyle(fontWeight: FontWeight.bold),),
+                                              SizedBox(height: 2.0,),
+                                              Text("lunch, dinner, breakfast,${i+1}"),
+                                              Row(
+                                                children: [
+                                                  Text("\$5.55${i+1}",style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),),
+                                                  Text(" \$6.55${i+1}",style: TextStyle(decoration: TextDecoration.lineThrough),),
+                                                  SizedBox(width: 100,),
+                                                  Icon(Icons.add,color: Colors.black,)
+                                                ],
+                                              ),
+                                            ],
+                                          ),
+                                          Icon(Icons.favorite_outline,color: Colors.grey,),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                /*Container(
                                   leading: Column(
                                     children: [
                                       Icon(Icons.favorite_outline,color: Colors.grey,),
@@ -201,14 +296,13 @@ class _A4State extends State<A4> with TickerProviderStateMixin{
                                       Text("lunch, dinner, breakfast, everyday, order now yalla,${i+1}"),
                                       Row(
                                         children: [
-                                          Text("\$5.55${i+1}",style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),),
+                                          Text("\$5.55${i+1} ",style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),),
                                           Text("\$6.55${i+1}",style: TextStyle(decoration: TextDecoration.lineThrough),),
                                         ],
                                       ),
                                     ],
                                   ),
-
-                                ),
+                                ),*/
                               );
                             },
                           ),
@@ -218,8 +312,40 @@ class _A4State extends State<A4> with TickerProviderStateMixin{
                             itemCount: 10,
                             itemBuilder: (context,i){
                               return Card(
-                                margin: EdgeInsets.symmetric(horizontal: 30,vertical: 10),
-                                child: ListTile(
+                                margin: EdgeInsets.symmetric(horizontal: 15,vertical: 10),
+                                child: Container(
+                                  child: Column(
+                                    children: [
+                                      Row(
+                                        children: [
+                                          Container(
+                                              decoration: BoxDecoration(
+                                                borderRadius: BorderRadius.circular(100.0),
+                                                color: Colors.black,
+                                              ),
+                                              child: Image.asset("assets/images/a4images/a5.jpg",height: 80,width: 80,fit: BoxFit.cover,)),
+                                          Column(
+                                            children: [
+                                              Text("Item Name${i+1}",style: TextStyle(fontWeight: FontWeight.bold),),
+                                              SizedBox(height: 2.0,),
+                                              Text("lunch, dinner, breakfast,${i+1}"),
+                                              Row(
+                                                children: [
+                                                  Text("\$5.55${i+1}",style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),),
+                                                  Text(" \$6.55${i+1}",style: TextStyle(decoration: TextDecoration.lineThrough),),
+                                                  SizedBox(width: 100,),
+                                                  Icon(Icons.add,color: Colors.black,)
+                                                ],
+                                              ),
+                                            ],
+                                          ),
+                                          Icon(Icons.favorite_outline,color: Colors.grey,),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                /*Container(
                                   leading: Column(
                                     children: [
                                       Icon(Icons.favorite_outline,color: Colors.grey,),
@@ -232,14 +358,13 @@ class _A4State extends State<A4> with TickerProviderStateMixin{
                                       Text("lunch, dinner, breakfast, everyday, order now yalla,${i+1}"),
                                       Row(
                                         children: [
-                                          Text("\$5.55${i+1}",style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),),
+                                          Text("\$5.55${i+1} ",style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),),
                                           Text("\$6.55${i+1}",style: TextStyle(decoration: TextDecoration.lineThrough),),
                                         ],
                                       ),
                                     ],
                                   ),
-
-                                ),
+                                ),*/
                               );
                             },
                           ),
@@ -249,8 +374,40 @@ class _A4State extends State<A4> with TickerProviderStateMixin{
                             itemCount: 10,
                             itemBuilder: (context,i){
                               return Card(
-                                margin: EdgeInsets.symmetric(horizontal: 30,vertical: 10),
-                                child: ListTile(
+                                margin: EdgeInsets.symmetric(horizontal: 15,vertical: 10),
+                                child: Container(
+                                  child: Column(
+                                    children: [
+                                      Row(
+                                        children: [
+                                          Container(
+                                              decoration: BoxDecoration(
+                                                borderRadius: BorderRadius.circular(100.0),
+                                                color: Colors.black,
+                                              ),
+                                              child: Image.asset("assets/images/a4images/a6.jpeg",height: 80,width: 80,fit: BoxFit.cover,)),
+                                          Column(
+                                            children: [
+                                              Text("Item Name${i+1}",style: TextStyle(fontWeight: FontWeight.bold),),
+                                              SizedBox(height: 2.0,),
+                                              Text("lunch, dinner, breakfast,${i+1}"),
+                                              Row(
+                                                children: [
+                                                  Text("\$5.55${i+1}",style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),),
+                                                  Text(" \$6.55${i+1}",style: TextStyle(decoration: TextDecoration.lineThrough),),
+                                                  SizedBox(width: 100,),
+                                                  Icon(Icons.add,color: Colors.black,)
+                                                ],
+                                              ),
+                                            ],
+                                          ),
+                                          Icon(Icons.favorite_outline,color: Colors.grey,),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                /*Container(
                                   leading: Column(
                                     children: [
                                       Icon(Icons.favorite_outline,color: Colors.grey,),
@@ -263,14 +420,13 @@ class _A4State extends State<A4> with TickerProviderStateMixin{
                                       Text("lunch, dinner, breakfast, everyday, order now yalla,${i+1}"),
                                       Row(
                                         children: [
-                                          Text("\$5.55${i+1}",style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),),
+                                          Text("\$5.55${i+1} ",style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),),
                                           Text("\$6.55${i+1}",style: TextStyle(decoration: TextDecoration.lineThrough),),
                                         ],
                                       ),
                                     ],
                                   ),
-
-                                ),
+                                ),*/
                               );
                             },
                           ),
@@ -280,8 +436,40 @@ class _A4State extends State<A4> with TickerProviderStateMixin{
                             itemCount: 10,
                             itemBuilder: (context,i){
                               return Card(
-                                margin: EdgeInsets.symmetric(horizontal: 30,vertical: 10),
-                                child: ListTile(
+                                margin: EdgeInsets.symmetric(horizontal: 15,vertical: 10),
+                                child: Container(
+                                  child: Column(
+                                    children: [
+                                      Row(
+                                        children: [
+                                          Container(
+                                              decoration: BoxDecoration(
+                                                borderRadius: BorderRadius.circular(100.0),
+                                                color: Colors.black,
+                                              ),
+                                              child: Image.asset("assets/images/a4images/a7.jpg",height: 80,width: 80,fit: BoxFit.cover,)),
+                                          Column(
+                                            children: [
+                                              Text("Item Name${i+1}",style: TextStyle(fontWeight: FontWeight.bold),),
+                                              SizedBox(height: 2.0,),
+                                              Text("lunch, dinner, breakfast,${i+1}"),
+                                              Row(
+                                                children: [
+                                                  Text("\$5.55${i+1}",style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),),
+                                                  Text(" \$6.55${i+1}",style: TextStyle(decoration: TextDecoration.lineThrough),),
+                                                  SizedBox(width: 100,),
+                                                  Icon(Icons.add,color: Colors.black,)
+                                                ],
+                                              ),
+                                            ],
+                                          ),
+                                          Icon(Icons.favorite_outline,color: Colors.grey,),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                /*Container(
                                   leading: Column(
                                     children: [
                                       Icon(Icons.favorite_outline,color: Colors.grey,),
@@ -294,14 +482,13 @@ class _A4State extends State<A4> with TickerProviderStateMixin{
                                       Text("lunch, dinner, breakfast, everyday, order now yalla,${i+1}"),
                                       Row(
                                         children: [
-                                          Text("\$5.55${i+1}",style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),),
+                                          Text("\$5.55${i+1} ",style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),),
                                           Text("\$6.55${i+1}",style: TextStyle(decoration: TextDecoration.lineThrough),),
                                         ],
                                       ),
                                     ],
                                   ),
-
-                                ),
+                                ),*/
                               );
                             },
                           ),
@@ -311,8 +498,40 @@ class _A4State extends State<A4> with TickerProviderStateMixin{
                             itemCount: 10,
                             itemBuilder: (context,i){
                               return Card(
-                                margin: EdgeInsets.symmetric(horizontal: 30,vertical: 10),
-                                child: ListTile(
+                                margin: EdgeInsets.symmetric(horizontal: 15,vertical: 10),
+                                child: Container(
+                                  child: Column(
+                                    children: [
+                                      Row(
+                                        children: [
+                                          Container(
+                                              decoration: BoxDecoration(
+                                                borderRadius: BorderRadius.circular(100.0),
+                                                color: Colors.black,
+                                              ),
+                                              child: Image.asset("assets/images/a4images/a8.jpg",height: 80,width: 80,fit: BoxFit.cover,)),
+                                          Column(
+                                            children: [
+                                              Text("Item Name${i+1}",style: TextStyle(fontWeight: FontWeight.bold),),
+                                              SizedBox(height: 2.0,),
+                                              Text("lunch, dinner, breakfast,${i+1}"),
+                                              Row(
+                                                children: [
+                                                  Text("\$5.55${i+1}",style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),),
+                                                  Text(" \$6.55${i+1}",style: TextStyle(decoration: TextDecoration.lineThrough),),
+                                                  SizedBox(width: 100,),
+                                                  Icon(Icons.add,color: Colors.black,)
+                                                ],
+                                              ),
+                                            ],
+                                          ),
+                                          Icon(Icons.favorite_outline,color: Colors.grey,),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                /*Container(
                                   leading: Column(
                                     children: [
                                       Icon(Icons.favorite_outline,color: Colors.grey,),
@@ -325,14 +544,13 @@ class _A4State extends State<A4> with TickerProviderStateMixin{
                                       Text("lunch, dinner, breakfast, everyday, order now yalla,${i+1}"),
                                       Row(
                                         children: [
-                                          Text("\$5.55${i+1}",style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),),
+                                          Text("\$5.55${i+1} ",style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),),
                                           Text("\$6.55${i+1}",style: TextStyle(decoration: TextDecoration.lineThrough),),
                                         ],
                                       ),
                                     ],
                                   ),
-
-                                ),
+                                ),*/
                               );
                             },
                           ),
@@ -342,8 +560,40 @@ class _A4State extends State<A4> with TickerProviderStateMixin{
                             itemCount: 10,
                             itemBuilder: (context,i){
                               return Card(
-                                margin: EdgeInsets.symmetric(horizontal: 30,vertical: 10),
-                                child: ListTile(
+                                margin: EdgeInsets.symmetric(horizontal: 15,vertical: 10),
+                                child: Container(
+                                  child: Column(
+                                    children: [
+                                      Row(
+                                        children: [
+                                          Container(
+                                              decoration: BoxDecoration(
+                                                borderRadius: BorderRadius.circular(100.0),
+                                                color: Colors.black,
+                                              ),
+                                              child: Image.asset("assets/images/a4images/a1.jpg",height: 80,width: 80,fit: BoxFit.cover,)),
+                                          Column(
+                                            children: [
+                                              Text("Item Name${i+1}",style: TextStyle(fontWeight: FontWeight.bold),),
+                                              SizedBox(height: 2.0,),
+                                              Text("lunch, dinner, breakfast,${i+1}"),
+                                              Row(
+                                                children: [
+                                                  Text("\$5.55${i+1}",style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),),
+                                                  Text(" \$6.55${i+1}",style: TextStyle(decoration: TextDecoration.lineThrough),),
+                                                  SizedBox(width: 100,),
+                                                  Icon(Icons.add,color: Colors.black,)
+                                                ],
+                                              ),
+                                            ],
+                                          ),
+                                          Icon(Icons.favorite_outline,color: Colors.grey,),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                /*Container(
                                   leading: Column(
                                     children: [
                                       Icon(Icons.favorite_outline,color: Colors.grey,),
@@ -356,14 +606,13 @@ class _A4State extends State<A4> with TickerProviderStateMixin{
                                       Text("lunch, dinner, breakfast, everyday, order now yalla,${i+1}"),
                                       Row(
                                         children: [
-                                          Text("\$5.55${i+1}",style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),),
+                                          Text("\$5.55${i+1} ",style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),),
                                           Text("\$6.55${i+1}",style: TextStyle(decoration: TextDecoration.lineThrough),),
                                         ],
                                       ),
                                     ],
                                   ),
-
-                                ),
+                                ),*/
                               );
                             },
                           ),
