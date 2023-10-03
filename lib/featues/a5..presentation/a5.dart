@@ -21,8 +21,8 @@ class _A5State extends State<A5> {
         actions: const [
           Row(
             children: [
-              Text("Sharing",style: TextStyle(color: Colors.blue),),
               Icon(Icons.share,color: Colors.blue,),
+              Text("Sharing",style: TextStyle(color: Colors.blue),),
             ],
           ),
         ],
@@ -34,8 +34,14 @@ class _A5State extends State<A5> {
           mainAxisSpacing: 10,
           crossAxisCount: 2,
           children: [
-            cardss("assets/images/a4images/a5.hpg", "Casual Trendy", "\$300.00", "4.2"),
-            cardss("assets/images/a4images/a5.hpg", "Casual Trendy", "\$300.00", "4.2"),
+            cardss("assets/images/a4images/a5.jpg", "Casual Trendy", "\$300.00", "4.2"),
+            cardss("assets/images/a4images/a5.jpg", "Casual Trendy", "\$300.00", "4.2"),
+            cardss("assets/images/a4images/a5.jpg", "Casual Trendy", "\$300.00", "4.2"),
+            cardss("assets/images/a4images/a5.jpg", "Casual Trendy", "\$300.00", "4.2"),
+            cardss("assets/images/a4images/a5.jpg", "Casual Trendy", "\$300.00", "4.2"),
+            cardss("assets/images/a4images/a5.jpg", "Casual Trendy", "\$300.00", "4.2"),
+            cardss("assets/images/a4images/a5.jpg", "Casual Trendy", "\$300.00", "4.2"),
+            cardss("assets/images/a4images/a5.jpg", "Casual Trendy", "\$300.00", "4.2"),
           ],
         ),
       ),
@@ -48,7 +54,7 @@ Widget cardss(image,txt1,txt2,txt3){
       children: [
         Stack(
           children: [
-            Image.asset(image,width: 50,height: 50),
+            Image.asset(image,width: 200,height: 150),
             Container(
               alignment: Alignment.topRight,
               child: IconButton(onPressed: (){},icon: Icon(Icons.favorite_outlined,color: Colors.red,),),
