@@ -38,7 +38,7 @@ class _A6State extends State<A6> {
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text("Item new item new item  ${index+1}"),
                           SizedBox(height: 3.0,),
@@ -49,15 +49,21 @@ class _A6State extends State<A6> {
                               Text("xyz",style: TextStyle(color: Colors.grey),),
                             ],
                           ),
-                          const Text("\$103.00",style: TextStyle(color: Colors.blue),),
-                         const Row(
-                           mainAxisAlignment: MainAxisAlignment.end,
+                         const  Row(
+                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Icon(Icons.minimize,color: Colors.blue,),
-                              Text("0"),
-                              Icon(Icons.add,color: Colors.blue,),
+                              const Text("\$103.00",style: TextStyle(color: Colors.blue),),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  Icon(Icons.minimize,color: Colors.blue,),
+                                  Text("0"),
+                                  Icon(Icons.add,color: Colors.blue,),
+                                ],
+                              ),
                             ],
                           ),
+
                         ],
                       ),
                     ),
