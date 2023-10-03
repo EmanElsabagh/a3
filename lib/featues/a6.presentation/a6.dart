@@ -38,19 +38,23 @@ class _A6State extends State<A6> {
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text("Item new item new item  ${index+1}"),
-                          SizedBox(height: 3.0,),
-                          const Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Icon(Icons.podcasts,color: Colors.black,),
-                              Text("xyz",style: TextStyle(color: Colors.grey),),
+                              Text("Item new item new item  ${index+1}"),
+                              SizedBox(height: 3.0,),
+                              const Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  Icon(Icons.podcasts,color: Colors.black,),
+                                  Text("xyz",style: TextStyle(color: Colors.grey),),
+                                ],
+                              ),
                             ],
                           ),
-                         const  Row(
-                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          const  Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               const Text("\$103.00",style: TextStyle(color: Colors.blue),),
                               Row(
@@ -63,7 +67,6 @@ class _A6State extends State<A6> {
                               ),
                             ],
                           ),
-
                         ],
                       ),
                     ),
