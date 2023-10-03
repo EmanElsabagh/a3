@@ -1,5 +1,6 @@
 import 'package:a3/a4.dart';
 import 'package:a3/featues/a5..presentation/a5.dart';
+import 'package:a3/featues/a6.presentation/a6.dart';
 import 'package:flutter/material.dart';
 final List<String> li = <String>['A', 'B', 'C', 'D', 'E', 'F'];
 void main() {
@@ -11,7 +12,7 @@ class Myhomepage extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: A5(),
+      home: A6(),
     );
   }
 }
