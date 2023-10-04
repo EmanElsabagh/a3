@@ -17,7 +17,6 @@ class _A7State extends State<A7> {
   bool passwordvisiable=true;
   @override
   Widget build(BuildContext context) {
-    String _dropdownValue=li.first;
     double width=MediaQuery.of(context).size.width;
     double height=MediaQuery.of(context).size.height;
     return Scaffold(
@@ -180,7 +179,7 @@ class _A7State extends State<A7> {
                                 ),
                                 child: ClipRRect(
                                     borderRadius:const BorderRadius.all(Radius.circular(16)),
-                                    child: Image.asset("assets/images/a4images/a3.jpg",width: 50,height: 50,fit: BoxFit.cover,)),
+                                    child: Image.asset("assets/images/a4images/a3.jpg",width: 70,height: 50,fit: BoxFit.cover,)),
                               ),
                               SizedBox(width: 7.0,),
                               Container(
@@ -190,7 +189,7 @@ class _A7State extends State<A7> {
                                 ),
                                 child: ClipRRect(
                                     borderRadius:const BorderRadius.all(Radius.circular(16)),
-                                    child: Image.asset("assets/images/a4images/a3.jpg",width: 50,height: 50,fit: BoxFit.cover,)),
+                                    child: Image.asset("assets/images/a4images/a3.jpg",width: 70,height: 50,fit: BoxFit.cover,)),
                               ),
                               SizedBox(width: 7.0,),
                               Container(
@@ -200,7 +199,7 @@ class _A7State extends State<A7> {
                                 ),
                                 child: ClipRRect(
                                     borderRadius:const BorderRadius.all(Radius.circular(16)),
-                                    child: Image.asset("assets/images/a4images/a3.jpg",width: 50,height: 50,fit: BoxFit.cover,)),
+                                    child: Image.asset("assets/images/a4images/a3.jpg",width: 70,height: 50,fit: BoxFit.cover,)),
                               ),
                             ],
                           ),

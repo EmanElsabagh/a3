@@ -1,6 +1,10 @@
 import 'package:a3/a4.dart';
 import 'package:a3/featues/a5..presentation/a5.dart';
 import 'package:a3/featues/a6.presentation/a6.dart';
+import 'package:a3/featues/a7/presentation/user/editprofile.dart';
+import 'package:a3/featues/a7/presentation/user/forget%20password.dart';
+import 'package:a3/featues/a7/presentation/user/login.dart';
+import 'package:a3/featues/a7/presentation/user/profile.dart';
 import 'package:a3/featues/a7/presentation/user/signup.dart';
 import 'package:flutter/material.dart';
 final List<String> li = <String>['A', 'B', 'C', 'D', 'E', 'F'];
@@ -11,9 +15,9 @@ void main() {
 class Myhomepage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: A7(),
+      home: Editprofile()
     );
   }
 }
