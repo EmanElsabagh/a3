@@ -6,6 +6,7 @@ import 'package:a3/featues/a7/presentation/user/forget%20password.dart';
 import 'package:a3/featues/a7/presentation/user/login.dart';
 import 'package:a3/featues/a7/presentation/user/profile.dart';
 import 'package:a3/featues/a7/presentation/user/signup.dart';
+import 'package:a3/featues/a7/presentation/user/verification.dart';
 import 'package:flutter/material.dart';
 final List<String> li = <String>['A', 'B', 'C', 'D', 'E', 'F'];
 void main() {
@@ -17,7 +18,7 @@ class Myhomepage extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Editprofile()
+      home: Verification()
     );
   }
 }
