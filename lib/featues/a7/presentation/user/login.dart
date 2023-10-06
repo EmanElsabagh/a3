@@ -2,6 +2,8 @@ import 'package:a3/featues/a7/presentation/user/forget%20password.dart';
 import 'package:a3/featues/a7/presentation/user/signup.dart';
 import 'package:flutter/material.dart';
 
+import '../../../common_utils/common_widgets.dart';
+
 class Login extends StatefulWidget {
   const Login({super.key});
 
@@ -44,71 +46,42 @@ class _LoginState extends State<Login> {
                       TextFormField(
                         cursorColor: Colors.white,
                         controller: email,
-                        decoration: InputDecoration(
-                          hintText: 'Enter your Email or Phone Number',
-                          hintStyle: const TextStyle(fontSize: 15, color: Colors.grey),
-                          prefixIcon: const Icon(Icons.email, color: Colors.grey,),
-                          focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(12.0),
-                            borderSide:const BorderSide(width: 1,color: Colors.white),
-                          ),
-                          enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(12.0),
-                            borderSide: const BorderSide(width: 1,color: Colors.white),
-                          ),
-                        ),
-                        //keyboardType: TextInputType.emailAddress,
+                        decoration: CommonUtils.textFieldDecoration( 'Enter your Email or Phone Number',const Icon(Icons.email, color: Colors.grey,),null),
+                        validator: (val){
+                          if(val ==null || val.isEmpty){
+                            return 'this field required';
+                          }
+                        },
                       ),
                       const SizedBox(height: 7.0,),
                       TextFormField(
                         cursorColor: Colors.white,
                         controller: password,
-                        decoration: InputDecoration(
-                            hintText: 'Enter your Password',
-                            hintStyle: const TextStyle(color: Colors.grey),
-                            focusedBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(12.0),
-                              borderSide: const BorderSide(width: 1, color: Colors.white),
-                            ),
-                            enabledBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(12.0),
-                              borderSide: const BorderSide(width: 1,color: Colors.white),
-                            ),
-                            prefixIcon: const Icon(Icons.lock,color: Colors.grey,),
-                            suffixIcon: IconButton(
-                              onPressed: (){
-                                setState(() {
-                                  passwordvisiable=!passwordvisiable;
-                                });
-                              },
-                              icon: Icon(
-                                passwordvisiable? Icons.visibility:Icons.visibility_off,
-                                color: Colors.grey,
-                              ),
-                            )
-                        ),
+                        decoration:  CommonUtils.textFieldDecoration( 'Enter your Password',const Icon(Icons.lock, color: Colors.grey,),IconButton(
+                          onPressed: (){
+                            setState(() {
+                              passwordvisiable=!passwordvisiable;
+                            });
+                          },
+                          icon: Icon(
+                            passwordvisiable? Icons.visibility:Icons.visibility_off,
+                            color: Colors.grey,
+                          ),
+                        )),
                         keyboardType: TextInputType.visiblePassword,
                         obscureText: passwordvisiable,
+                        validator: (val){
+                          if(val ==null || val.isEmpty){
+                            return 'this field required';
+                          }
+                        },
                       ),
                       const SizedBox(height: 7.0,),
-                      Container(
-                        margin: const EdgeInsets.all(15.0),
-                        //padding: EdgeInsets.all(20.0),
-                        width: double.infinity,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(12.0),
-                        ),
-                        child: ElevatedButton(
-                          onPressed: (){},
-                          style: ElevatedButton.styleFrom(
-                              primary: Colors.blue,
-                              elevation: 10.0),
-                          child: const Padding(
-                            padding: EdgeInsets.all(15.0),
-                            child: Text("Login",style: TextStyle(color: Colors.white,fontSize: 15.0),),
-                          ),
-                        ),
-                      ),
+                     CommonUtils.customButton(title: 'Login',onTap: (){
+                       Navigator.push(
+                         context,
+                         MaterialPageRoute(builder: (context) => const Signup()),);
+                     }),
                       const SizedBox(height: 7.0,),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -126,7 +99,7 @@ class _LoginState extends State<Login> {
                                           // _radioVal = 'male';
                                   });
                                 },
-                                activeColor: Color(0xff06bbfb),
+                                activeColor: const Color(0xff06bbfb),
                               ),
                               // ),
                               // Radio(
