@@ -1,4 +1,5 @@
 import 'package:a3/featues/a7/presentation/user/forget%20password.dart';
+import 'package:a3/featues/a7/presentation/user/signup.dart';
 import 'package:flutter/material.dart';
 
 class Login extends StatefulWidget {
@@ -160,7 +161,11 @@ class _LoginState extends State<Login> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text("Already have an account?",style: TextStyle(color: Colors.grey),),
-                          TextButton(onPressed: (){}, child: Text("Sign Up",style: TextStyle(color: Colors.blue,decoration:TextDecoration.underline ),))
+                          TextButton(onPressed: (){
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => Signup()),);
+                          }, child: Text("Sign Up",style: TextStyle(color: Colors.blue,decoration:TextDecoration.underline ),))
                         ],
                       ),
                     ],

@@ -1,12 +1,13 @@
+import 'package:a3/featues/a7/presentation/user/login.dart';
 import 'package:flutter/material.dart';
-class A7 extends StatefulWidget {
-  const A7({super.key});
+class Signup extends StatefulWidget {
+  const Signup({super.key});
 
   @override
-  State<A7> createState() => _A7State();
+  State<Signup> createState() => _SignupState();
 }
 
-class _A7State extends State<A7> {
+class _SignupState extends State<Signup> {
   final List<String> li = <String>['Male','Female'];
 
   final _formkey=GlobalKey<FormState>();
@@ -208,7 +209,11 @@ class _A7State extends State<A7> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text("Already have an account?",style: TextStyle(color: Colors.grey),),
-                              TextButton(onPressed: (){}, child: Text("Login",style: TextStyle(color: Colors.blue,decoration:TextDecoration.underline ),))
+                              TextButton(onPressed: (){
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => Login()),);
+                              }, child: Text("Login",style: TextStyle(color: Colors.blue,decoration:TextDecoration.underline ),))
                             ],
                           ),
                         ],

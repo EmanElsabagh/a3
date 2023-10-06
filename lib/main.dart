@@ -18,7 +18,7 @@ class Myhomepage extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Verification()
+      home: Signup()
     );
   }
 }
