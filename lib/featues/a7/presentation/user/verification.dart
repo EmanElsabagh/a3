@@ -18,26 +18,25 @@ class Verification extends StatelessWidget {
                     borderRadius: BorderRadius.circular(30.0),
                     child: Image.asset("assets/images/a4images/a9.png",width: 80,height: 80,),
                   ),
-                  SizedBox(height: 10.0,),
-                  Text("Verification",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 25.0),),
-                  SizedBox(height: 30.0,),
+                  const SizedBox(height: 10.0,),
+                  const Text("Verification",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 25.0),),
+                  const SizedBox(height: 30.0,),
                   OTPTextField(
                     length: 4,
                     width: MediaQuery.of(context).size.width,
                     fieldWidth: 50,
-                    style: TextStyle(
+                    style: const TextStyle(
                         fontSize: 17,
                       color: Colors.black
                     ),
                     textFieldAlignment: MainAxisAlignment.spaceAround,
                     fieldStyle: FieldStyle.underline,
                     onCompleted: (pin) {
-                      print("Completed: " + pin);
                     },
                   ),
-                  SizedBox(height: 15.0,),
+                  const SizedBox(height: 15.0,),
                   Container(
-                    margin: EdgeInsets.all(10.0),
+                    margin: const EdgeInsets.all(10.0),
                     width: double.infinity,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(12.0),
@@ -47,8 +46,8 @@ class Verification extends StatelessWidget {
                       style: ElevatedButton.styleFrom(
                           primary: Colors.blue,
                           elevation: 10.0),
-                      child: Padding(
-                        padding: const EdgeInsets.all(15.0),
+                      child: const Padding(
+                        padding: EdgeInsets.all(15.0),
                         child: Text("Verify",style: TextStyle(color: Colors.white,fontSize: 15.0),),
                       ),
                     ),

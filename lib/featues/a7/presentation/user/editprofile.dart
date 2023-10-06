@@ -1,31 +1,31 @@
 import 'package:flutter/material.dart';
-class Editprofile extends StatefulWidget {
-  const Editprofile({super.key});
+class EditProfile extends StatefulWidget {
+  const EditProfile({super.key});
 
   @override
-  State<Editprofile> createState() => _EditprofileState();
+  State<EditProfile> createState() => _EditProfileState();
 }
 
-class _EditprofileState extends State<Editprofile> {
+class _EditProfileState extends State<EditProfile> {
+  final _formKey=GlobalKey<FormState>();
+  TextEditingController name=TextEditingController();
+  TextEditingController email=TextEditingController();
+  TextEditingController password=TextEditingController();
+  TextEditingController newPassword=TextEditingController();
+  TextEditingController confirmPassword=TextEditingController();
+  TextEditingController gender=TextEditingController();
+  bool passwordVisiable=true;
+
   @override
   Widget build(BuildContext context) {
-    final _formkey=GlobalKey<FormState>();
-    TextEditingController name=TextEditingController();
-    TextEditingController email=TextEditingController();
-    TextEditingController password=TextEditingController();
-    TextEditingController newpassword=TextEditingController();
-    TextEditingController confirmpassword=TextEditingController();
-    TextEditingController gender=TextEditingController();
-    bool passwordvisiable=true;
-
     return Scaffold(
       appBar: AppBar(
-        title: Text("Edit Profile",style: TextStyle(color: Colors.black),),
+        title: const Text("Edit Profile",style: TextStyle(color: Colors.black),),
         centerTitle: true,
         backgroundColor: Colors.white10,
         elevation: 0.0,
-        leading: Icon(Icons.arrow_back,color: Colors.black,),
-        actions: [
+        leading: const Icon(Icons.arrow_back,color: Colors.black,),
+        actions: const [
           Icon(Icons.verified_user_rounded,color:Colors.grey,),
         ],
       ),
@@ -43,12 +43,12 @@ class _EditprofileState extends State<Editprofile> {
                         borderRadius: BorderRadius.circular(30.0),
                         child: Image.asset("assets/images/a4images/a9.png",width: 80,height: 80,fit: BoxFit.cover,),
                       ),
-                      Icon(Icons.ac_unit_outlined,color: Colors.blue,),
+                      const Icon(Icons.ac_unit_outlined,color: Colors.blue,),
                     ],
                   ),
-                  SizedBox(height: 30.0,),
+                  const SizedBox(height: 30.0,),
                   Form(
-                      key: _formkey,
+                      key: _formKey,
                       child: Column(
                         children: [
                           TextFormField(
@@ -59,146 +59,146 @@ class _EditprofileState extends State<Editprofile> {
                               filled: true,
                               // focusColor: Colors.pink,
                               hintText: 'Full Name',
-                              hintStyle: TextStyle(fontSize: 15, color: Colors.grey),
-                              prefixIcon: Icon(Icons.person, color: Colors.grey,),
+                              hintStyle: const TextStyle(fontSize: 15, color: Colors.grey),
+                              prefixIcon: const Icon(Icons.person, color: Colors.grey,),
                               focusedBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(12.0),
-                                borderSide:BorderSide(width: 1,color: Colors.white),
+                                borderSide:const BorderSide(width: 1,color: Colors.white),
                               ),
                               enabledBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(12.0),
-                                borderSide: BorderSide(width: 1,color: Colors.white),
+                                borderSide: const BorderSide(width: 1,color: Colors.white),
                               ),
                             ),
                             keyboardType: TextInputType.text,
                           ),
-                          SizedBox(height: 7.0,),
+                          const SizedBox(height: 7.0,),
                           TextFormField(
                             cursorColor: Colors.white,
                             controller: email,
                             decoration: InputDecoration(
                               hintText: 'Enter your Email or Phone Number',
-                              hintStyle: TextStyle(fontSize: 15, color: Colors.grey),
-                              prefixIcon: Icon(Icons.email, color: Colors.grey,),
+                              hintStyle: const TextStyle(fontSize: 15, color: Colors.grey),
+                              prefixIcon: const Icon(Icons.email, color: Colors.grey,),
                               focusedBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(30.0),
-                                borderSide:BorderSide(width: 1,color: Colors.white),
+                                borderSide:const BorderSide(width: 1,color: Colors.white),
                               ),
                               enabledBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(30.0),
-                                borderSide: BorderSide(width: 1,color: Colors.white),
+                                borderSide: const BorderSide(width: 1,color: Colors.white),
                               ),
                             ),
                             keyboardType: TextInputType.emailAddress,
                           ),
-                          SizedBox(height: 7.0,),
+                          const SizedBox(height: 7.0,),
                           TextFormField(
                             cursorColor: Colors.white,
                             controller: password,
                             decoration: InputDecoration(
                                 hintText: 'Enter your Password',
-                                hintStyle: TextStyle(color: Colors.grey),
+                                hintStyle: const TextStyle(color: Colors.grey),
                                 focusedBorder: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(30.0),
-                                  borderSide: BorderSide(width: 1, color: Colors.white),
+                                  borderSide: const BorderSide(width: 1, color: Colors.white),
                                 ),
                                 enabledBorder: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(30.0),
-                                  borderSide: BorderSide(width: 1,color: Colors.white),
+                                  borderSide: const BorderSide(width: 1,color: Colors.white),
                                 ),
-                                prefixIcon: Icon(Icons.lock,color: Colors.grey,),
+                                prefixIcon: const Icon(Icons.lock,color: Colors.grey,),
                                 suffixIcon: IconButton(
                                   onPressed: (){
                                     setState(() {
-                                      passwordvisiable=!passwordvisiable;
+                                      passwordVisiable=!passwordVisiable;
                                     });
                                   },
                                   icon: Icon(
-                                    passwordvisiable? Icons.visibility:Icons.visibility_off,
+                                    passwordVisiable? Icons.visibility:Icons.visibility_off,
                                     color: Colors.grey,
                                   ),
                                 )
                             ),
                             keyboardType: TextInputType.visiblePassword,
-                            obscureText: passwordvisiable,
+                            obscureText: passwordVisiable,
                           ),
-                          SizedBox(height: 7.0,),
+                          const SizedBox(height: 7.0,),
                           TextFormField(
                             cursorColor: Colors.white,
-                            controller: newpassword,
+                            controller: newPassword,
                             decoration: InputDecoration(
                                 hintText: 'Enter your Password',
-                                hintStyle: TextStyle(color: Colors.grey),
+                                hintStyle: const TextStyle(color: Colors.grey),
                                 focusedBorder: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(30.0),
-                                  borderSide: BorderSide(width: 1, color: Colors.white),
+                                  borderSide: const BorderSide(width: 1, color: Colors.white),
                                 ),
                                 enabledBorder: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(30.0),
-                                  borderSide: BorderSide(width: 1,color: Colors.white),
+                                  borderSide: const BorderSide(width: 1,color: Colors.white),
                                 ),
-                                prefixIcon: Icon(Icons.lock,color: Colors.grey,),
+                                prefixIcon: const Icon(Icons.lock,color: Colors.grey,),
                                 suffixIcon: IconButton(
                                   onPressed: (){
                                     setState(() {
-                                      passwordvisiable=!passwordvisiable;
+                                      passwordVisiable=!passwordVisiable;
                                     });
                                   },
                                   icon: Icon(
-                                    passwordvisiable? Icons.visibility:Icons.visibility_off,
+                                    passwordVisiable? Icons.visibility:Icons.visibility_off,
                                     color: Colors.grey,
                                   ),
                                 )
                             ),
                             keyboardType: TextInputType.visiblePassword,
-                            obscureText: passwordvisiable,
+                            obscureText: passwordVisiable,
                           ),
-                          SizedBox(height: 7.0,),
+                          const SizedBox(height: 7.0,),
                           TextFormField(
                             cursorColor: Colors.white,
-                            controller: confirmpassword,
+                            controller: confirmPassword,
                             decoration: InputDecoration(
                                 hintText: 'Enter your Password',
-                                hintStyle: TextStyle(color: Colors.grey),
+                                hintStyle: const TextStyle(color: Colors.grey),
                                 focusedBorder: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(30.0),
-                                  borderSide: BorderSide(width: 1, color: Colors.white),
+                                  borderSide: const BorderSide(width: 1, color: Colors.white),
                                 ),
                                 enabledBorder: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(30.0),
-                                  borderSide: BorderSide(width: 1,color: Colors.white),
+                                  borderSide: const BorderSide(width: 1,color: Colors.white),
                                 ),
-                                prefixIcon: Icon(Icons.lock,color: Colors.grey,),
+                                prefixIcon: const Icon(Icons.lock,color: Colors.grey,),
                                 suffixIcon: IconButton(
                                   onPressed: (){
                                     setState(() {
-                                      passwordvisiable=!passwordvisiable;
+                                      passwordVisiable=!passwordVisiable;
                                     });
                                   },
                                   icon: Icon(
-                                    passwordvisiable? Icons.visibility:Icons.visibility_off,
+                                    passwordVisiable? Icons.visibility:Icons.visibility_off,
                                     color: Colors.grey,
                                   ),
                                 )
                             ),
                             keyboardType: TextInputType.visiblePassword,
-                            obscureText: passwordvisiable,
+                            obscureText: passwordVisiable,
                           ),
-                          SizedBox(height: 7.0,),
+                          const SizedBox(height: 7.0,),
                           TextFormField(
                             controller: gender,
                             decoration: InputDecoration(
                               hintText: 'Select A Gender',
 
-                              hintStyle: TextStyle(fontSize: 15, color: Colors.grey),
-                              prefixIcon: Icon(Icons.share, color: Colors.grey,),
+                              hintStyle: const TextStyle(fontSize: 15, color: Colors.grey),
+                              prefixIcon: const Icon(Icons.share, color: Colors.grey,),
                               focusedBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(30.0),
-                                borderSide:BorderSide(width: 1,color: Colors.white),
+                                borderSide:const BorderSide(width: 1,color: Colors.white),
                               ),
                               enabledBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(30.0),
-                                borderSide: BorderSide(width: 1,color: Colors.white),
+                                borderSide: const BorderSide(width: 1,color: Colors.white),
                               ),
                             ),
                           ),

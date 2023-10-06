@@ -9,8 +9,6 @@ class A5 extends StatefulWidget {
 class _A5State extends State<A5> {
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
-    double height = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
         title: const Text("My Wishlist",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black),),
@@ -49,39 +47,37 @@ class _A5State extends State<A5> {
   }
 }
 Widget cardss(image,txt1,txt2,txt3){
-  return Container(
-    child: Column(
-      children: [
-        Stack(
-          children: [
-            Image.asset(image,width: 200,height: 150),
-            Container(
-              alignment: Alignment.topRight,
-              child: IconButton(onPressed: (){},icon: Icon(Icons.favorite_outlined,color: Colors.red,),),
-            ),
-          ],
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Text(txt1),
-          ],
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text(txt2,style: TextStyle(color: Colors.blue),),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Icon(Icons.star,color: Colors.yellowAccent,),
-                Text(txt3),
-              ],
-            ),
-          ],
-        ),
-      ],
-    ),
+  return Column(
+    children: [
+      Stack(
+        children: [
+          Image.asset(image,width: 200,height: 150),
+          Container(
+            alignment: Alignment.topRight,
+            child: IconButton(onPressed: (){},icon: const Icon(Icons.favorite_outlined,color: Colors.red,),),
+          ),
+        ],
+      ),
+      Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Text(txt1),
+        ],
+      ),
+      Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(txt2,style: const TextStyle(color: Colors.blue),),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              const Icon(Icons.star,color: Colors.yellowAccent,),
+              Text(txt3),
+            ],
+          ),
+        ],
+      ),
+    ],
   );
 }
 

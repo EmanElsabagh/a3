@@ -9,22 +9,20 @@ class A6 extends StatefulWidget {
 class _A6State extends State<A6> {
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
-    double height = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
-        title: Text("My Cart",style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),),
+        title: const Text("My Cart",style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),),
         centerTitle: true,
         backgroundColor: Colors.white,
-        leading: Icon(Icons.arrow_back_ios_new_rounded,color: Colors.black,),
+        leading: const Icon(Icons.arrow_back_ios_new_rounded,color: Colors.black,),
       ),
       body: ListView.builder(
-          physics: BouncingScrollPhysics(),
+          physics: const BouncingScrollPhysics(),
           shrinkWrap: true,
           itemCount: 10,
         itemBuilder: (context,index){
             return Card(
-              margin: EdgeInsets.symmetric(horizontal: 10.0,vertical: 7.0),
+              margin: const EdgeInsets.symmetric(horizontal: 10.0,vertical: 7.0),
               child: Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12.0),
@@ -43,7 +41,7 @@ class _A6State extends State<A6> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text("Item new item new item  ${index+1}"),
-                              SizedBox(height: 3.0,),
+                              const SizedBox(height: 3.0,),
                               const Row(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
@@ -56,7 +54,7 @@ class _A6State extends State<A6> {
                           const  Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              const Text("\$103.00",style: TextStyle(color: Colors.blue),),
+                              Text("\$103.00",style: TextStyle(color: Colors.blue),),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 children: [

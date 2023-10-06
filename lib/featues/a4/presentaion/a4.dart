@@ -202,7 +202,7 @@ class _A4State extends State<A4> with TickerProviderStateMixin{
                   Row(
                     children: [
                       Image.asset("assets/images/a4images/a9.png", width: 50,height: 50,),
-                      const Column(
+                       const Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text("Mc Donald\'s",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15.0),),
