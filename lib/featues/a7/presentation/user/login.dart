@@ -14,6 +14,11 @@ class _LoginState extends State<Login> {
   TextEditingController password=TextEditingController();
   bool passwordvisiable=true;
   final _formkey=GlobalKey<FormState>();
+
+
+  bool _radioSelected = false;
+  String _radioVal='';
+
   @override
 
   Widget build(BuildContext context) {
@@ -108,9 +113,34 @@ class _LoginState extends State<Login> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          const Row(
+                           Row(
                             children: [
-                              Text('Keep Sign in',),
+                              Checkbox(
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(10)),
+                                tristate: true,
+                                value: _radioSelected,
+                                onChanged: (bool? newValue){
+                                  setState(() {
+                                          _radioSelected = !_radioSelected;
+                                          // _radioVal = 'male';
+                                  });
+                                },
+                                activeColor: Color(0xff06bbfb),
+                              ),
+                              // ),
+                              // Radio(
+                              //   value: 1,
+                              //   groupValue: _radioSelected,
+                              //   activeColor: Colors.blue,
+                              //   onChanged: (value) {
+                              //     setState(() {
+                              //       _radioSelected = value??1;
+                              //       _radioVal = 'male';
+                              //     });
+                              //   },
+                              // ),
+                              const Text('Keep Sign in',),
                             ],
                           ),
                           TextButton(onPressed: (){Navigator.push(
