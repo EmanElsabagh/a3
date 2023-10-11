@@ -114,6 +114,42 @@ class _TalabatState extends State<Talabat> {
                           );
                         }).toList(),
                       ),
+                      SizedBox(width: 5.0,),
+                      DropdownButton(
+                        hint: const Text("Withdraw", style: TextStyle(color: Colors.black),),
+                        value: _dropdownValue,
+                        icon: const Icon(Icons.keyboard_arrow_down_sharp,color: Colors.black,),
+                        style: const TextStyle(color: Colors.black),
+                        onChanged: (String? value){
+                          setState(() {
+                            _dropdownValue=value!;
+                          });
+                        },
+                        items: li.map<DropdownMenuItem<String>>((String value) {
+                          return DropdownMenuItem<String>(
+                            value: value,
+                            child: Text(value),
+                          );
+                        }).toList(),
+                      ),
+                      SizedBox(width: 5.0,),
+                      DropdownButton(
+                        hint: const Text("Withdraw", style: TextStyle(color: Colors.black),),
+                        value: _dropdownValue,
+                        icon: const Icon(Icons.keyboard_arrow_down_sharp,color: Colors.black,),
+                        style: const TextStyle(color: Colors.black),
+                        onChanged: (String? value){
+                          setState(() {
+                            _dropdownValue=value!;
+                          });
+                        },
+                        items: li.map<DropdownMenuItem<String>>((String value) {
+                          return DropdownMenuItem<String>(
+                            value: value,
+                            child: Text(value),
+                          );
+                        }).toList(),
+                      ),
                     ],
                   ),
                 SingleChildScrollView(
