@@ -50,7 +50,6 @@ return Row(
   mainAxisAlignment: MainAxisAlignment.spaceBetween,
   children: [
     Row(
-
       children: [
         IconButton(onPressed: (){}, icon: Icon(icon1,color: Colors.blue,)),
         Text(txt),

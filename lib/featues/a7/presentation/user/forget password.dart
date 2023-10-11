@@ -1,3 +1,4 @@
+import 'package:a3/featues/common_utils/common_widgets.dart';
 import 'package:flutter/material.dart';
 
 class Forgetpass extends StatelessWidget {
@@ -27,39 +28,11 @@ class Forgetpass extends StatelessWidget {
                         TextFormField(
                           cursorColor: Colors.white,
                           controller: email,
-                          decoration: InputDecoration(
-                            hintText: 'Enter your Email or Phone Number',
-                            hintStyle: const TextStyle(fontSize: 15, color: Colors.grey),
-                            prefixIcon: const Icon(Icons.email, color: Colors.grey,),
-                            focusedBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(12.0),
-                              borderSide:const BorderSide(width: 1,color: Colors.white),
-                            ),
-                            enabledBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(12.0),
-                              borderSide: const BorderSide(width: 1,color: Colors.white),
-                            ),
-                          ),
+                          decoration: CommonUtils.textFieldDecoration("Enter your Email or Phone Number", Icon(Icons.email),null),
                           //keyboardType: TextInputType.emailAddress,
                         ),
                         const SizedBox(height: 10.0,),
-                        Container(
-                          margin: const EdgeInsets.all(10.0),
-                          width: double.infinity,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(12.0),
-                          ),
-                          child: ElevatedButton(
-                            onPressed: (){},
-                            style: ElevatedButton.styleFrom(
-                                primary: Colors.blue,
-                                elevation: 10.0),
-                            child: const Padding(
-                              padding: EdgeInsets.all(20.0),
-                              child: Text("Submit",style: TextStyle(color: Colors.white,fontSize: 15.0),),
-                            ),
-                          ),
-                        ),
+                        CommonUtils.customButton(title: "Submit"),
                       ],
                     ),),
               ],

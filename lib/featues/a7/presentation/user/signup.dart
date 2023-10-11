@@ -75,7 +75,6 @@ class _SignupState extends State<Signup> {
                               obscureText: passwordvisiable,
                             ),
                             const SizedBox(height: 10.0,),
-
                             const SizedBox(height: 10.0,),
                             DropDownTextField(
                               controller: gender,
@@ -103,20 +102,8 @@ class _SignupState extends State<Signup> {
                               },
                             ),
                             const SizedBox(height: 10.0,),
-                            Container(
-                              margin: const EdgeInsets.all(10.0),
-                              width: double.infinity,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(12.0),
-                              ),
-                              child: ElevatedButton(
-                                onPressed: (){},
-                                style: ElevatedButton.styleFrom(
-                                  primary: Colors.blue,
-                                elevation: 10.0),
-                                child: const Text("Register",style: TextStyle(color: Colors.white,fontSize: 15.0),),
-                              ),
-                            ),
+                            CommonUtils.customButton(title: "Register"),
+                            const SizedBox(height: 10.0,),
                              Row(
                               children: [
                                 const Icon(Icons.verified_user,color: Colors.blue,),
