@@ -68,12 +68,12 @@ class CommonUtils{
  }
 */
 }
-class Carddata extends StatelessWidget {
+class Carddataa8 extends StatelessWidget {
   final txt1;
   final txt2;
   final txt3;
   final image;
-  Carddata(this.txt1,this.txt2,this.txt3,this.image);
+  Carddataa8(this.txt1,this.txt2,this.txt3,this.image);
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -187,4 +187,3 @@ class Carddata extends StatelessWidget {
       ),
     );
   }
-

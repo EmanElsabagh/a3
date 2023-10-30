@@ -183,13 +183,13 @@ class _TalabatState extends State<Talabat> {
                         scrollDirection: Axis.horizontal,
                         child: Row(
                           children: [
-                            Carddata("Bazooka", "Burgers, chicken", "4.5", "assets/images/a4images/a5.jpg"),
+                            Carddataa8("Bazooka", "Burgers, chicken", "4.5", "assets/images/a4images/a5.jpg"),
                             SizedBox(width: 10.0,),
-                            Carddata("Khat3am", "Breakfast, Falafel", "4.3", "assets/images/a4images/a4.jpg"),
+                            Carddataa8("Khat3am", "Breakfast, Falafel", "4.3", "assets/images/a4images/a4.jpg"),
                             SizedBox(width: 10.0,),
-                            Carddata("Bazooka", "Burgers, chicken", "3.5", "assets/images/a4images/a5.jpg"),
+                            Carddataa8("Bazooka", "Burgers, chicken", "3.5", "assets/images/a4images/a5.jpg"),
                             SizedBox(width: 10.0,),
-                            Carddata("Bazooka", "Burgers, chicken", "5.5", "assets/images/a4images/a5.jpg"),
+                            Carddataa8("Bazooka", "Burgers, chicken", "5.5", "assets/images/a4images/a5.jpg"),
                           ],
                         ),
                       ),

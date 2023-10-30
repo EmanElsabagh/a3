@@ -1,6 +1,12 @@
 
+import 'package:a3/featues/a10/presentation/homescreen.dart';
+import 'package:a3/featues/a11/presentation/test.dart';
 import 'package:a3/featues/a7/presentation/user/signup.dart';
 import 'package:a3/featues/a8/presentation/talabat.dart';
+import 'package:a3/featues/a9/presentation/f1.dart';
+import 'package:a3/featues/a9/presentation/f2.dart';
+import 'package:a3/featues/a9/presentation/f3.dart';
+import 'package:a3/featues/a9/presentation/f4.dart';
 import 'package:flutter/material.dart';
 final List<String> li = <String>['A', 'B', 'C', 'D', 'E', 'F'];
 void main() {
@@ -12,7 +18,7 @@ class Myhomepage extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Talabat()
+      home: Mostaqel()
     );
   }
 }
