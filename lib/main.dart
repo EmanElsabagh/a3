@@ -7,6 +7,7 @@ import 'package:a3/featues/a9/presentation/f1.dart';
 import 'package:a3/featues/a9/presentation/f2.dart';
 import 'package:a3/featues/a9/presentation/f3.dart';
 import 'package:a3/featues/a9/presentation/f4.dart';
+import 'package:a3/featues/product_screen/presentation/pscreen.dart';
 import 'package:flutter/material.dart';
 final List<String> li = <String>['A', 'B', 'C', 'D', 'E', 'F'];
 void main() {
@@ -18,7 +19,7 @@ class Myhomepage extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Mostaqel()
+      home: ProductScreen()
     );
   }
 }
