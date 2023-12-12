@@ -10,6 +10,7 @@ class PItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: const EdgeInsets.symmetric(horizontal: 0,vertical: 3),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15.0),
         color: Colors.white,
@@ -23,21 +24,30 @@ class PItem extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(20.0),
-              child: Image.asset(imagePath,width: 75,height: 75,fit: BoxFit.cover,)),
-          const SizedBox(width: 15.0,),
-         Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.start,
+          Row(
             children: [
-              Text(title,style: TextStyle(fontSize: 15.0),),
-              Text(subtitle,style: TextStyle(fontSize: 15.0,color: Colors.purple),),
+              ClipRRect(
+                borderRadius: BorderRadius.circular(20.0),
+                  child: Image.asset(imagePath,width: 75,height: 75,fit: BoxFit.cover,)),
+              const SizedBox(width: 15.0,),
+             Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(title,style: TextStyle(fontSize: 25.0),),
+                  Text(subtitle,style: TextStyle(fontSize: 15.0,color: Colors.purple),),
+                ],
+              ),
             ],
           ),
-          Text(price,style: TextStyle(fontSize: 15.0,fontWeight: FontWeight.bold),),
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Text(price,style: TextStyle(fontSize: 15.0,fontWeight: FontWeight.bold),),
+          ),
+
         ],
       ),
+
     );
   }
 }
