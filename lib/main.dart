@@ -9,8 +9,11 @@ import 'package:a3/featues/a9/presentation/f3.dart';
 import 'package:a3/featues/a9/presentation/f4.dart';
 import 'package:a3/featues/product_screen/presentation/pscreen.dart';
 import 'package:flutter/material.dart';
+
+import 'di/injection.dart';
 final List<String> li = <String>['A', 'B', 'C', 'D', 'E', 'F'];
 void main() {
+  initAppDependencies();
   runApp(Myhomepage());
 }
 

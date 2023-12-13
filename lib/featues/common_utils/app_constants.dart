@@ -1,5 +1,7 @@
 
 
+import '../../network/urls/apis.dart';
+
 enum AppLanguages { ar, en }
 
 final List<AppLanguages> dropDownApLanguages = [
@@ -23,7 +25,7 @@ final List<UserTypes> dropDownUserTypesItems = [
   UserTypes.customer,
 ];
 
-// String appCurrentBaseUrl = Apis.baseUrl;
-// String appCurrentAppId = Apis.appId;
+String appCurrentBaseUrl = Apis.baseUrl;
+String appCurrentAppId = Apis.appId;
 // String appCurrentGooglePlayId = 'com.bridge.vendors';
 // String appCurrentAppStoreId = '6473696895';

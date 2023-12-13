@@ -1,5 +1,10 @@
 import 'package:a3/featues/product_screen/presentation/widget/p_item.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../common_utils/log_utils.dart';
+import '../data/products_entity.dart';
+import 'controller/products_cubit.dart';
 class ProductScreen extends StatefulWidget {
   const ProductScreen({super.key});
 
@@ -33,13 +38,70 @@ List<String> priceList=['100\$','200\$','150\$','90\$'];
           leading: const Icon(Icons.add_alert,color: Colors.black,),
         backgroundColor: Colors.white70,
         ),
-        body:ListView.builder(
-          padding: EdgeInsets.all(10.0),
-            itemCount: 4,
-            itemBuilder: (BuildContext context, int index) {
-              return  PItem(title: title1List[index],imagePath:imageList[index],subtitle: title2List[index],price: priceList[index],);
-              }
-            ),
+        body:BlocProvider(
+               create: (context) => ProductsCubit()..getProducts({'paginate':20,'sortBy':'bestSelling'}),
+              child: BlocConsumer<ProductsCubit, ProductsState>(
+                listener: ( context,  state) {},
+                builder: ( context, state) {
+                  if(state is ProductsLoaded){
+                    List<ProductsDataRows>? data = state.productsDataRows;
+                    Log.e((data).toString());
+                    return ListView.builder(
+                        shrinkWrap: true,
+                        scrollDirection: Axis.vertical,
+                        padding: const EdgeInsets.all(10.0),
+                        itemCount: data?.length??0,
+                        itemBuilder: (BuildContext context, int index) {
+                          return  PItem(productsDataRows: data![index]);
+
+                          // return  PItem(title:data?[index].title??'',
+                          //   imagePath:data?[index].media?.url??'',
+                          //   subtitle:data?[index].brand?.name??'',
+                          //   price: data?[index].price??'',);
+                        }
+                    );
+                  }else if(state is ProductsFailed){
+                    return Text(state.message??'');
+                  }else{
+                    return const Center(child: CircularProgressIndicator());
+                  }
+
+  },
+),
+),
+
+
+
+// old
+//         body:BlocProvider(
+//                create: (context) => ProductsCubit()..getProducts({'paginate':20,'sortBy':'bestSelling'}),
+//               child: BlocConsumer<ProductsCubit, ProductsState>(
+//                 listener: ( context,  state) {},
+//                 builder: ( context, state) {
+//                   if(state is ProductsLoaded){
+//                     List<ProductsDataRows>? data = state.productsDataRows;
+//                     Log.e((data).toString());
+//                     return ListView.builder(
+//                         shrinkWrap: true,
+//                         scrollDirection: Axis.vertical,
+//                         padding: const EdgeInsets.all(10.0),
+//                         itemCount: state.productsDataRows?.length??0,
+//                         itemBuilder: (BuildContext context, int index) {
+//                           return  PItem(title: state.productsDataRows?[index].title??'',
+//                             imagePath:state.productsDataRows?[index].media?.url??'',
+//                             subtitle:state.productsDataRows?[index].brand?.name??'',
+//                             price: state.productsDataRows?[index].price??'',);
+//                         }
+//                     );
+//                   }else if(state is ProductsFailed){
+//                     return Text(state.message??'');
+//                   }else{
+//                     return const Center(child: CircularProgressIndicator());
+//                   }
+//
+//   },
+// ),
+// ),
     );
   }
 }

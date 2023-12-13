@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
+import '../../data/products_entity.dart';
+
 class PItem extends StatelessWidget {
-  const PItem({super.key, this.imagePath="", this.title="eman", this.subtitle="younis", this.price=""});
-  final String imagePath;
-  final String title;
-  final String subtitle;
-  final String price;
+  const PItem({super.key, required this.productsDataRows});
+  final ProductsDataRows productsDataRows;
+
 
   @override
   Widget build(BuildContext context) {
@@ -28,21 +28,24 @@ class PItem extends StatelessWidget {
             children: [
               ClipRRect(
                 borderRadius: BorderRadius.circular(20.0),
-                  child: Image.asset(imagePath,width: 75,height: 75,fit: BoxFit.cover,)),
+                  child: Image.network(productsDataRows.media?.url??'',width: 75,height: 75,fit: BoxFit.fill,)),
               const SizedBox(width: 15.0,),
-             Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(title,style: TextStyle(fontSize: 25.0),),
-                  Text(subtitle,style: TextStyle(fontSize: 15.0,color: Colors.purple),),
-                ],
-              ),
+             SizedBox(
+               width: 200,
+               child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(productsDataRows.title??'',style: const TextStyle(fontSize: 18.0),maxLines: 2,overflow: TextOverflow.clip,),
+                    Text(productsDataRows.brand?.name??'',style: const TextStyle(fontSize: 15.0,color: Colors.purple),),
+                  ],
+                ),
+             ),
             ],
           ),
           Padding(
             padding: const EdgeInsets.all(10.0),
-            child: Text(price,style: TextStyle(fontSize: 15.0,fontWeight: FontWeight.bold),),
+            child: Text(productsDataRows.price??'',style: const TextStyle(fontSize: 15.0,fontWeight: FontWeight.bold),),
           ),
 
         ],

@@ -10,12 +10,12 @@ class ProductsInitial extends ProductsState {}
 class ProductsLoading extends ProductsState {}
 
 class ProductsLoaded extends ProductsState {
-   List<ProductsDataRows>? productsDataRows;
-   ProductsLoaded(productsDataRows);
+ final  List<ProductsDataRows>? productsDataRows;
+   const ProductsLoaded(this.productsDataRows);
 }
 
 
 class ProductsFailed extends ProductsState {
-  String? message;
-  ProductsFailed(message);
+  final String? message;
+  const ProductsFailed(this.message);
 }

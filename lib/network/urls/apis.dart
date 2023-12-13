@@ -29,10 +29,10 @@ class Apis {
   static const String doContactUs = "/backend/contact";
 
   static const String sendFcmToken = "auth/fcmToken";
-  static const String getProducts = "backend/products";
+  static const String getProducts = "products";
   static const String getCategories = "backend/categories";
   static const String getAttributes = "backend/attributes";
-  static const String getBrands= "backend/brands";
+  static const String getBrands= "brands";
   static const String getNotifications = "backend/notifications";
   static const String getNotificationsBadgeCount = "backend/notifications/badgeCount";
   static const String seeNotifications = "backend/notifications/read";
