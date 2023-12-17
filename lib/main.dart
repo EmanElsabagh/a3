@@ -11,6 +11,7 @@ import 'package:a3/featues/product_screen/presentation/pscreen.dart';
 import 'package:flutter/material.dart';
 
 import 'di/injection.dart';
+import 'featues/brands/presentation/brand_screen.dart';
 final List<String> li = <String>['A', 'B', 'C', 'D', 'E', 'F'];
 void main() {
   initAppDependencies();
@@ -22,7 +23,7 @@ class Myhomepage extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: ProductScreen()
+      home: BrandsScreen()
     );
   }
 }

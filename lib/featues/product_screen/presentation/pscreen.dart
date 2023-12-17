@@ -14,18 +14,6 @@ class ProductScreen extends StatefulWidget {
 
 class _ProductScreenState extends State<ProductScreen> {
 
-
-
-List<String> imageList=["assets/images/a4images/im2.jpg","assets/images/a4images/im2.jpg","assets/images/a4images/im2.jpg","assets/images/a4images/im2.jpg",];
-List<String> title1List=['t1','t2','t3','t4'];
-List<String> title2List=['sup1','sup2','sup3','sup4'];
-List<String> priceList=['100\$','200\$','150\$','90\$'];
-
-
-
-
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
