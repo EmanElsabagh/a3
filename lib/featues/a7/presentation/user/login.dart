@@ -19,7 +19,6 @@ class _LoginState extends State<Login> {
 
 
   bool _radioSelected = false;
-  String _radioVal='';
 
   @override
 
